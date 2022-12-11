@@ -1,0 +1,24 @@
+.button {
+  width: 100px;
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 0;
+  margin: 0 auto;
+}
+
+.form {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.lable {
+  margin-right: 10px;
+  width: 100%;
+  display: grid;
+}
+.button:hover {
+  background-color: rgba(78, 78, 185, 0.671);
+}

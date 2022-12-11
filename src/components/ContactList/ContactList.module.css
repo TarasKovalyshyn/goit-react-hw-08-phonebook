@@ -1,0 +1,24 @@
+.button__remove {
+  margin-left: 15px;
+ padding: 5px 8px;
+
+  border-radius: 6px;
+  cursor: pointer;
+  border: 0;
+ align-items: center;
+
+}
+.list__items {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.items {
+  display: inline-block;
+  
+  
+}
+.button__remove:hover {
+  background-color: rgba(78, 78, 185, 0.671);
+}
