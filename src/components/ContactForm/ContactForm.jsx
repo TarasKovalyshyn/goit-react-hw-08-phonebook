@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 import React, { Component } from 'react';
 
@@ -9,8 +8,6 @@ class ContactForm extends Component {
     name: '',
     number: '',
   };
-  inputName = nanoid();
-  inputNumber = nanoid();
 
   //   За допомогою ключа [name] отримуємо value з input
   //   (name: value, number: value) та записуємо в "state"
@@ -24,10 +21,10 @@ class ContactForm extends Component {
   // та додаємо очищення input після сабміту
   handleSubmit = e => {
     e.preventDefault();
-
+    const { name, number } = this.state;
     // Викликаємо метод який ми передавали за допомогою props і
     // передаємо значення які збереглися в state після сабміту форми, а саме "name" та "number"
-    this.props.onSubmit({ name: this.state.name, number: this.state.number });
+    this.props.onSubmit({ name, number });
     this.reset();
   };
 
@@ -40,7 +37,7 @@ class ContactForm extends Component {
     return (
       <div>
         <form className={css.form} onSubmit={this.handleSubmit}>
-          <label htmlFor={this.inputName} className={css.lable}>
+          <label className={css.lable}>
             Name
             <input
               className={css.inputContact}
@@ -53,7 +50,7 @@ class ContactForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label htmlFor={this.inputNumber} className={css.lable}>
+          <label className={css.lable}>
             Number
             <input
               type="tel"
