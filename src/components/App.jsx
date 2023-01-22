@@ -2,7 +2,9 @@ import ContactForm from './ContactForm/ContactForm';
 import { nanoid } from 'nanoid';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
+// import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
+// import { addContact } from './redux/contactsSlice';
 
 const INITIAL_LIST = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -13,36 +15,46 @@ const INITIAL_LIST = [
 
 const App = () => {
   const [filter, setFilter] = useState('');
-  const [contacts, setContacts] = useState(() => {
-    return JSON.parse(window.localStorage.getItem('contacts')) ?? INITIAL_LIST;
-  });
+  // const dispatch = useDispatch();
+  const [contacts, setContacts] = useState(INITIAL_LIST);
 
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const addContact = contact => {
-    const isIncontacts = contacts.some(
-      ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
-    );
-    if (isIncontacts) {
-      alert(`${contact.name} is already in contacts.`);
-      return;
-    }
-    setContacts(prevState => [...prevState, { id: nanoid(), ...contact }]);
-  };
 
+
+  
   const changeFilter = e => {
     setFilter(e.currentTarget.value);
   };
 
-  const getVisibleContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
 
+
+
+  const getVisibleContacts = () => {
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
+      contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
+
+
+
+
+  const addContact = contact => {
+    const isIncontacts = contacts.some(
+      ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
+    );
+
+    if (isIncontacts) {
+      alert(`${contact.name} is already in contacts.`);
+      return;
+    }
+    setContacts(prevState => [{ id: nanoid(), ...contact }, ...prevState]);
+  };
+
+
+
 
   const removeContacts = contactId => {
     setContacts(prevState =>
@@ -50,6 +62,8 @@ const App = () => {
     );
   };
   const visibleContacts = getVisibleContacts();
+
+
 
   return (
     <div style={{ width: '300px', marginLeft: '15px' }}>
