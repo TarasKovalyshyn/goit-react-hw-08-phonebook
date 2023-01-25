@@ -7,7 +7,7 @@ import { selekectContacts } from './redux/selectors';
 
 const App = () => {
   const contacts = useSelector(selekectContacts);
-
+  console.log(contacts);
   return (
     <div style={{ width: '300px', marginLeft: '15px' }}>
       <h1>Phonebook</h1>
