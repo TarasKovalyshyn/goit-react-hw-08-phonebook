@@ -1,9 +1,12 @@
 import React from 'react';
-const ContactItem = ({ id, name, number, onRemoveContact }) => {
+import { useDispatch } from 'react-redux';
+import { removeContacts } from 'components/redux/contactsSlice';
+const ContactItem = ({ id, name, number }) => {
+  const dispatch = useDispatch();
   return (
     <li>
       {name + ': ' + number}
-      <button type="button" onClick={() => onRemoveContact(id)}>
+      <button type="button" onClick={() => dispatch(removeContacts(id))}>
         Delete
       </button>
     </li>

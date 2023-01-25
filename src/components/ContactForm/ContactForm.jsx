@@ -1,10 +1,15 @@
 import css from './ContactForm.module.css';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'components/redux/contactsSlice';
+import { selekectContacts } from 'components/redux/selectors';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
+  const dispatch = useDispatch();
+  const contacts = useSelector(selekectContacts);
   const handleNameChange = e => {
     setName(e.target.value);
   };
@@ -13,20 +18,6 @@ const ContactForm = ({ onSubmit }) => {
     setNumber(e.target.value);
   };
 
-  // аналогічний запис як "handleNumberChange, handleNameChange "
-  // const handleChange = e => {
-  //   const { name, number } = e.target;
-  //   switch (name) {
-  //     case 'name':
-  //       setName(value);
-
-  //       break;
-  //     case 'number':
-  //       setNumber(number);
-  //     default:
-  //       console.warn(`тип поля name -$(name) не обробляється`);
-  //   }
-  // };
   const reset = () => {
     setName('');
     setNumber('');
@@ -34,7 +25,16 @@ const ContactForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({ name, number });
+    const isInСontacts = contacts.some(
+      contacts => contacts.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (isInСontacts) {
+      alert(`${name} is already in contacts.`);
+      return;
+    }
+    dispatch(addContact({ name, number }));
+
     reset();
   };
 
