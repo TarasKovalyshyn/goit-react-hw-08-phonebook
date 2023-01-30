@@ -3,7 +3,7 @@ import css from './ContactList.module.css';
 import ContactItem from '../ContactItem/ContactItem';
 
 import { useSelector } from 'react-redux';
-import { selekectContacts, selekectFilter } from 'components/redux/selectors';
+import { selekectContacts, selekectFilter } from 'redux/selectors';
 
 const ContactList = () => {
   const contacts = useSelector(selekectContacts);
@@ -18,8 +18,8 @@ const ContactList = () => {
 
   return (
     <ul className={css.list__items}>
-      {visibleContacts.map(({ id, name, number }) => (
-        <ContactItem key={id} id={id} name={name} number={number} />
+      {visibleContacts.map(({ id, name, phone }) => (
+        <ContactItem key={id} id={id} name={name} phone={phone} />
       ))}
     </ul>
   );
