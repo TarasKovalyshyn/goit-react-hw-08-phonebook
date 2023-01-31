@@ -2,7 +2,7 @@ import css from './ContactForm.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selekectContacts } from 'redux/selectors';
+import { getContacts } from 'redux/selectors';
 import { addContacts } from 'redux/operations';
 
 const ContactForm = () => {
@@ -10,9 +10,7 @@ const ContactForm = () => {
   const [phone, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(selekectContacts);
-
-
+  const contacts = useSelector(getContacts);
 
   const handleNameChange = e => {
     setName(e.target.value);
@@ -59,7 +57,7 @@ const ContactForm = () => {
           />
         </label>
         <label className={css.lable}>
-          Number
+          Phone
           <input
             type="tel"
             name="phone"

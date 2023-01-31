@@ -8,6 +8,7 @@ const ContactItem = ({ id, name, phone }) => {
     <li>
       {name + ': ' + phone}
       <button type="button" onClick={() => dispatch(deleteContacts(id))}>
+    
         Delete
       </button>
     </li>

@@ -6,7 +6,7 @@ import { getError, getIsLoading } from '../redux/selectors';
 
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
-// import Filter from './Filter/Filter';
+import Filter from './Filter/Filter';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const App = () => {
       <h2>Contacts </h2>
       {isLoading && !error && <b>Loading contacts...</b>}
 
-      {/* <Filter />  */}
+      <Filter />
 
       <ContactList />
     </div>
