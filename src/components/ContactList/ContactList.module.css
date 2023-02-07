@@ -9,6 +9,7 @@
 
 }
 .list__items {
+  list-style: none;
   width: 300px;
   display: flex;
   flex-direction: column;

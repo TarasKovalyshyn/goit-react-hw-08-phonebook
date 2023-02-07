@@ -17,18 +17,19 @@ export const LoginForm = () => {
     );
     form.reset();
   };
-  //   console.log(LoginForm);
   return (
+    <div className='authFormContainer'>
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
         Email
-        <input type="email" name="email" />
+        <input type="email" name="email"  placeholder="Enter your Email..."/>
       </label>
-      <label className={css.label}>
+      <label className={css.label}  placeholder="Enter your Password...">
         Password
-        <input type="password" name="password" />
+        <input type="password" name="password" placeholder="Enter your Password..." />
       </label>
       <button type="submit">Log in </button>
     </form>
+    </div>
   );
 };

@@ -66,6 +66,7 @@ const ContactForm = () => {
             required
             value={number}
             onChange={handleNumberChange}
+            placeholder="Enter Phone number to add..."
           />
         </label>
         <button type="submit" className={css.button}>
