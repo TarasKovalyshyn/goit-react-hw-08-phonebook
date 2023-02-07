@@ -1,24 +1,28 @@
-.button {
-  width: 100px;
-  display: block;
-  padding: 10px;
-  border-radius: 6px;
+.addContacts {
+  padding: 0.5rem;
+  border-radius: 10px;
   cursor: pointer;
-  border: 0;
-  margin: 0 auto;
+  border: none;
+  margin-top: 10px;
+  
 }
 
 .form {
-  gap: 20px;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  margin-top: 50px;
 }
-.lable {
-  margin-right: 10px;
-  width: 100%;
-  display: grid;
+
+.contactsLable {
+  text-align: left;
+  padding: 0.25rem 0;
 }
-.button:hover {
+.contactsInput {
+  margin: 0.1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+}
+.addContacts:hover {
   background-color: rgba(77, 77, 160, 0.671);
 }

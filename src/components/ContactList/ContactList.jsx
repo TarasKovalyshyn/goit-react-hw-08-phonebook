@@ -9,7 +9,7 @@ const ContactList = () => {
   const visibleContacts = useSelector(getVisibleContacts);
 
   return (
-    <ul className={css.list__items}>
+    <ul className={css.contacts__list}>
       {visibleContacts.map(({ id, name, number }) => (
         <ContactItem key={id} id={id} name={name} phone={number} />
       ))}

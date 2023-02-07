@@ -1,17 +1,10 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { LoginForm } from 'components/LoginForm/LoginForm';
-
-const style = {
-  container: {
-    minHeight: 'calc(100vh - 50px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }}
+import css from './Login.module.css'
 
 export default function Login() {
   return (
-    <div style={style.container} >
+    <div className={css.loginContainer} >
       <HelmetProvider>
         <Helmet>
           <title>Login</title>

@@ -9,15 +9,15 @@ const Filter = () => {
   const filter = useSelector(selectFilter);
   const onChange = e => dispatch(filterChange(e.target.value));
   return (
-    <label className={css.label__filter}>
-      <p>Find contacts by name</p>
+    <div className={css.filterContainer}>
+      <label> Find contacts by name</label>
       <input
         type="text"
-        className={css.filter__input}
+        className={css.filterInput}
         value={filter}
         onChange={onChange}
       />
-    </label>
+    </div>
   );
 };
 export default Filter;

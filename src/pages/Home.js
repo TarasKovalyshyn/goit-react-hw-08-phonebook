@@ -4,6 +4,8 @@ const style = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: 'white',
+    backgroundImage: 'linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d)',
   },
   title: {
     fontWeigth: 500,

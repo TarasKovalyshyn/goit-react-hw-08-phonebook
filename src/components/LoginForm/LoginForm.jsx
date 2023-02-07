@@ -8,7 +8,7 @@ export const LoginForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    console.log(form)
+    console.log(form);
     dispatch(
       logIn({
         email: form.elements.email.value,
@@ -18,18 +18,36 @@ export const LoginForm = () => {
     form.reset();
   };
   return (
-    <div className='authFormContainer'>
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Email
-        <input type="email" name="email"  placeholder="Enter your Email..."/>
-      </label>
-      <label className={css.label}  placeholder="Enter your Password...">
-        Password
-        <input type="password" name="password" placeholder="Enter your Password..." />
-      </label>
-      <button type="submit">Log in </button>
-    </form>
+    <div className="authFormContainer">
+      
+      <form
+        className={css.loginForm}
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
+        <h2>Login</h2>
+        <label className={css.loginLabel}>email</label>
+        <input
+          className={css.loginInput}
+          type="email"
+          name="email"
+          placeholder="yourmail@gmail.com"
+        />
+
+        <label className={css.loginLabel} placeholder="Password">
+          password
+        </label>
+        <input
+          className={css.loginInput}
+          type="password"
+          name="password"
+          placeholder="*************"
+        />
+
+        <button className={css.loginButton} type="submit">
+          Log in{' '}
+        </button>
+      </form>
     </div>
   );
 };

@@ -1,0 +1,18 @@
+.delete__contacts{
+padding: 5px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+margin-left: 10px;
+}
+.delete__contacts:hover {
+    background-color: rgba(78, 78, 185, 0.671);
+  }
+
+
+  .contactsItem{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

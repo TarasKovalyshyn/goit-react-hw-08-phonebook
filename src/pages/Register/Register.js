@@ -1,17 +1,11 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import css from './Register.module.css'
 
-const style = {
-  container: {
-    minHeight: 'calc(100vh - 50px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }}
 
 export default function Register() {
   return (
-    <div style={style.container}>
+    <div className={css.registerContainer}>
       <HelmetProvider>
         <Helmet>
           <title>Registration</title>

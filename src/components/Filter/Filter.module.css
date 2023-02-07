@@ -1,7 +1,11 @@
-
-.label__filter {
- 
+.filterContainer{
   display: flex;
   flex-direction: column;
-  
+  margin-top: 15px;
+}
+.filterInput{
+  margin: 0.1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
 }
