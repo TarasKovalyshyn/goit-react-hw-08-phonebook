@@ -8,7 +8,6 @@ export const LoginForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    console.log(form);
     dispatch(
       logIn({
         email: form.elements.email.value,
@@ -19,7 +18,6 @@ export const LoginForm = () => {
   };
   return (
     <div className="authFormContainer">
-      
       <form
         className={css.loginForm}
         onSubmit={handleSubmit}
@@ -41,7 +39,7 @@ export const LoginForm = () => {
           className={css.loginInput}
           type="password"
           name="password"
-          placeholder="*************"
+          placeholder="Enter your password"
         />
 
         <button className={css.loginButton} type="submit">
